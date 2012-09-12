@@ -4,7 +4,7 @@ This is my Symfony boilerplate featuring setup for all the bundles I use more of
 
 ## Installation
 
-* Extract the [archive](#) into desired folder [e.g. `/var/www/symfony-boilerplate/`];
+* Extract the [archive](https://github.com/moonwave99/symfony2-boilerplate/zipball/master) into desired folder [e.g. `/var/www/symfony-boilerplate/`];
 * Be sure Symfony requirements are met by pointing your browser to [`http://localhost/symfony-boilerplate/web/config.php`](http://localhost/symfony-boilerplate/web/config.php);
 * Hit the `Configure your Symfony Application Online` link;
 * `app/config/parameters.yml` file will be created - be sure it looks like the following, beside `secret` value being different of course:
