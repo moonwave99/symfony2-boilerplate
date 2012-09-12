@@ -1,0 +1,5 @@
+#rest
+users:
+    type:     rest
+    resource: MWLabs\RestBundle\Controller\UserController
+    prefix:   /api/

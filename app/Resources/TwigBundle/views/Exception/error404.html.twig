@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}MWLabs - 404 not found!{% endblock %}
+
+{% block style %}
+
+	{{ parent() }}
+
+	{% stylesheets
+		'@FrontendBundle/Resources/public/css/bootstrap.min.css'
+		'@FrontendBundle/Resources/public/css/main.css'		
+		filter='yui_css' output='css/*.css' %}
+	    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+	{% endstylesheets %}
+
+{% endblock %}
+
+{% block body %}
+
+	<div class="container" style="margin-top:40px">
+		<h2>MWLabs - 404 not found!</h2>
+
+		<p>We couldn't find what you were looking for. If problem persists, <a href="mailto:{{ webmaster }}">get in touch with the webmaster</a>.</p>
+		<p>Go back to <a href="{{ path('mwlabs_frontend_home_index')}}">homepage</a>.</p>
+	    <hr/>
+
+	    {% include 'FrontendBundle::footer.html.twig' %}
+	</div>
+
+{% endblock %}

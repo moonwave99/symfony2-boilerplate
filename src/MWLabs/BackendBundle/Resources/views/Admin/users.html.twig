@@ -1,0 +1,33 @@
+{% extends 'BackendBundle::layout.html.twig' %}
+
+{% block pagetitle %}Manage Users{% endblock %}
+
+{% block breadcrumbs %}
+<li class="active">
+	<span class="divider">/</span>Users
+</li>
+{% endblock %}
+
+{% block main %}
+<div class="loader"></div>
+<div class="hidelet">
+<div class="table-wrapper">
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="table" data-entity="user" data-source="{{ path('get_users') }}">
+	<thead>
+		<th data-m-data="id" data-b-sortable="false", data-s-width="56px">Actions</th>
+		<th data-m-data="username">Username</th>
+		<th data-m-data="email">E-Mail</th>	
+		<th data-m-data="enabled" data-type="boolean" data-s-class="center" data-s-width="56px">Enabled</th>
+	</thead>
+	<tbody>					
+	</tbody>
+</table>
+</div>
+<p class="table-actions pull-right">
+	<a href="#" class="btn btn-primary" data-controller="users" data-action="showNewForm"><i class="icon-white icon-plus"></i> Create New User</a>
+</p>
+<div class="clearfix"></div>
+</div>
+{% endblock %}
+
+{% block templates %}{% include 'BackendBundle:Admin:Templates/template-users.html.twig' %}{% endblock %}

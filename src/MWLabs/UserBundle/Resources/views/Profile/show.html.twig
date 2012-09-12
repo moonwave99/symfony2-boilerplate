@@ -1,0 +1,17 @@
+{% extends "UserBundle::layout.html.twig" %}
+
+{% block main %}
+
+<h2>Profile</h2>
+
+<p>Welcome <strong>{{ app.user.username }}</strong>!</p>
+
+<p><a href="{{ path('fos_user_profile_edit') }}" class="btn btn-mini btn-primary">Edit Details</a></p>
+
+<div class="well">
+{% block fos_user_content %}
+{% include "UserBundle:Profile:show_content.html.twig" %}
+{% endblock fos_user_content %}
+</div>
+
+{% endblock %}

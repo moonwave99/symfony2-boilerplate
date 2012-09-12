@@ -1,0 +1,30 @@
+{% extends "UserBundle::layout.html.twig" %}
+
+{% block title %}Login{% endblock %}
+
+{% block main %}
+
+<h2>Login</h2>
+
+<div class="well form-boxed">
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Your username" class="input-xlarge"/>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="_password" placeholder="Your password" class="input-xlarge"/>
+
+    <label for="remember_me" class="checkbox">
+	    <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> Remember Me
+	</label>
+
+    <input type="submit" id="_submit" name="_submit" value="Login" class="btn btn-primary"/>
+</form>
+{% if error %}
+    <div class="alert alert-error">{{ error|trans({}, 'FOSUserBundle') }}</div>
+{% endif %}
+</div>
+<p><a href="{{ path('fos_user_resetting_request') }}">Forgot your password?</a></p>
+{% endblock %}

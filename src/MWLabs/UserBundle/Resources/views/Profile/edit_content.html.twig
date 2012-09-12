@@ -1,0 +1,42 @@
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="post" class="form-horizontal fos_user_profile_edit well form-boxed">
+
+	<fieldset>
+	{{ form_label( form.username, 'Username', { 'label_attr' : {'class' : 'control-label'} }) }}
+	<div class="control-group">
+		<div class="controls">
+			{{ form_widget( form.username )}}
+			<div class="error"></div>
+		</div>
+	</div>
+	
+	{{ form_label( form.email, 'E-mail', { 'label_attr' : {'class' : 'control-label'} }) }}
+	<div class="control-group">
+		<div class="controls">
+			{{ form_widget( form.email )}}
+			<div class="error"></div>
+		</div>
+	</div>	
+
+	{{ form_label( form.current_password, 'Current Password', { 'label_attr' : {'class' : 'control-label'} }) }}
+	<div class="control-group">
+		<div class="controls">
+			{{ form_widget( form.current_password )}}
+			<div class="error"></div>
+		</div>
+	</div>
+
+	{{ form_rest(form) }}
+
+	</fieldset>
+
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" class="btn btn-primary"/>
+		<a href="{{ path('fos_user_profile_show') }}" class="btn">Go Back</a>
+    </div>
+	
+	<div class="form-errors">
+	{{ form_errors(form) }}
+	</div>
+
+</form>
+<p>For any issues please get in touch with the <a href="mailto:{{ webmaster }}">webmaster</a>.</p>

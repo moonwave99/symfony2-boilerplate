@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{% if title is defined %}{{ title }}{% else %}Tipo1.it - Italian Eternal #1 Resource{% endif %}{% endblock %}
+{% block style %}
+{{ parent() }}
+{% stylesheets
+	'../app/Resources/public/css/bootstrap.min.css'
+	'../app/Resources/public/css/bootstrap.datepicker.css'	
+	'../app/Resources/public/css/main.css'	
+	'@FrontendBundle/Resources/public/css/frontend.css'		
+	filter='yui_css' output='css/*.css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+{% endstylesheets %}
+{% endblock %}
+{% block body %}
+
+	{% include '::navbar.html.twig' %}
+
+	<div class="container" data-controller="security" data-startup>
+
+	{% block main %}
+
+	{% endblock %}
+
+	  <hr/>
+
+	  {% include '::footer.html.twig' %}
+
+	</div> <!-- /container -->
+	<div class="modal fade hide" id="modal"></div>
+	{% block js %}
+		{{ parent() }}
+
+		{% javascripts
+			'../app/Resources/public/js/underscore-min.js'
+			'../app/Resources/public/js/bootstrap.min.js'				
+			'../app/Resources/public/js/simple.min.js'
+			'../app/Resources/public/js/main.js'						
+			'@FrontendBundle/Resources/public/js/frontend.js'
+			filter='yui_js' %}
+		    <script src="{{ asset_url }}" ></script>
+		{% endjavascripts %}		
+		<script>var basePath = "{{ app.request.basePath }}";</script>		
+		
+	{% endblock %}
+{% endblock %}

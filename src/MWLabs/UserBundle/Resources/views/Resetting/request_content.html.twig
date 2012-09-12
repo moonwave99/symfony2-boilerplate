@@ -1,0 +1,12 @@
+<form action="{{ path('fos_user_resetting_send_email') }}" method="post" class="fos_user_resetting_request">
+    <div>
+        <label for="username">E-mail</label>
+        <input type="email" id="username" name="username" placeholder="Inserisci la tua e-mail" class="input-xlarge"/>
+    </div>
+    <div>
+        <input type="submit" value="Recupera Password" class="btn btn-primary"/>
+    </div>
+</form>
+{% if invalid_username is defined %}
+    <div class="alert alert-error">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}</div>
+{% endif %}

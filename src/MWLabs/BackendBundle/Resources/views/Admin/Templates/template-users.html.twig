@@ -1,0 +1,68 @@
+<script type="text/template" id="template-user-form-new">
+<form class="form-horizontal homepage-form" action="{{ path('post_users') }}" method="post" data-controller="users" data-action="<%=action%>">
+<div class="modal-header">
+	<h4><% print(action == 'post' ? 'Create New' : 'Edit' )%> User</h4>
+</div>
+
+<div class="modal-body">
+	<fieldset>
+	<div class="control-group">
+		{{ form_label( form.username, 'Username', { 'label_attr' : {'class' : 'control-label'} }) }}
+		<div class="controls">
+			{{ form_widget( form.username, { 'attr' : { 'class' : 'span4' }} )}}
+			<div class="error"></div>
+		</div>
+	</div>
+	<div class="control-group">
+		{{ form_label( form.email, 'E-Mail', { 'label_attr' : {'class' : 'control-label'} }) }}
+		<div class="controls">
+			{{ form_widget( form.email, { 'attr' : { 'class' : 'span4' }} )}}
+			<div class="error"></div>			
+		</div>
+	</div>
+	<div class="control-group">
+		{{ form_label( form.enabled, 'Enabled', { 'label_attr' : {'class' : 'control-label'} }) }}
+		<div class="controls">
+			{{ form_widget( form.enabled, { 'attr' : { 'class' : 'span4' }} )}}
+			<div class="error"></div>
+			<p class="help-block"><i class="icon-exclamation-sign"></i> Users will not be able to login until enabled.</p>
+		</div>
+	</div>	
+	{{ form_rest(form) }}
+	</fieldset>
+	<p><small>* = required field.</small></p>
+	<div class="alert alert-danger hide"><i class="icon-warning-sign"></i> <span class="message"></span></div>
+</div>
+
+<div class="modal-footer">
+	<input class="btn btn-primary" data-loading-text="Loading..." data-complete-text="Done!" value="<% print(action == 'post' ? 'Create' : 'Save' )%> User" type="submit"/>
+	<a href="#" class="btn" data-dismiss="modal">Close</a>
+</div>
+</form>
+</script>
+
+<script type="text/template" id="template-user-form-remove">
+<form class="form-horizontal homepage-form" action="{{ path('post_users') }}" method="post" data-controller="users" data-action="remove">
+<div class="modal-header">
+	<h4>Remove User</h4>
+</div>
+
+<div class="modal-body">
+	<p>You are about to remove <strong><%=entry.username %></strong>, are you sure? You cannot go back!</p>
+	<div class="alert alert-danger" style="display:none"><i class="icon-warning-sign"></i> <span class="message"></span></div>
+</div>
+
+<div class="modal-footer">
+	<input type="hidden" name="user[id]" value="<%=entry.id%>"/>
+	<input class="btn btn-primary" data-loading-text="Loading..." data-complete-text="Done!" value="Remove User" type="submit"/>
+	<a href="#" class="btn" data-dismiss="modal">Close</a>
+</div>
+</form>
+</script>
+
+<script type="text/template" id="template-user-row-actions">
+	<div class="btn-group" data-id="<%=id%>">
+		<a href="#" class="btn btn-primary btn-small" data-controller="users" data-action="showEditForm"><i class="icon-pencil icon-white"></i></a>
+		<a href="#" class="btn btn-primary btn-small" data-controller="users" data-action="showRemoveForm"><i class="icon-remove icon-white"></i></a>
+	</div>
+</script>

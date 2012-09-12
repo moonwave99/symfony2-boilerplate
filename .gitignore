@@ -1,0 +1,19 @@
+# Symfony directories
+app/bootstrap.php.cache
+app/cache/*
+app/logs/*
+build/
+vendor/*
+bin
+
+# Assetic Dumps
+web/uploads/*
+web/bundles/*
+web/css/*
+web/js/*
+
+# Configuration files
+app/config/parameters.yml
+
+# Composer lock file
+composer.lock

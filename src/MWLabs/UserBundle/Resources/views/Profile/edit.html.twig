@@ -1,0 +1,15 @@
+{% extends "UserBundle::layout.html.twig" %}
+
+{% block main %}
+
+<h2>Edit Profile</h2>
+
+<p>Here you can edit your details.</p>
+
+<p><a href="{{ path('fos_user_profile_show') }}" class="btn btn-mini btn-primary">Back to profile</a></p>
+
+{% block fos_user_content %}
+{% include "UserBundle:Profile:edit_content.html.twig" %}
+{% endblock fos_user_content %}
+
+{% endblock %}

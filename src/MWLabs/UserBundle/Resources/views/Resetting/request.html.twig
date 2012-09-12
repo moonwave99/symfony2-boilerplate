@@ -1,0 +1,14 @@
+{% extends "UserBundle::layout.html.twig" %}
+
+{% block title %}Retrieve Password{% endblock %}
+
+{% block main %}
+
+<h2>Retrieve Password</h2>
+
+<div class="well" style="max-width:400px">
+{% block fos_user_content %}
+{% include "UserBundle:Resetting:request_content.html.twig" %}
+{% endblock %}
+</div>
+{% endblock %}

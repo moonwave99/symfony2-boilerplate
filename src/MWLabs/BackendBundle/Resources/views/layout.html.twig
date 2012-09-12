@@ -1,0 +1,61 @@
+{% extends '::base.html.twig' %}
+
+{% if section is not defined %}{% set section = 'index' %}{% endif %}
+
+{% block title %}{% if title is defined %}{{ title }}{% else %}MWLabs - Reserved Area{% endif %}{% endblock %}
+{% block description %}MWLabs - Reserved Area{% endblock %}
+{% block style %}
+{{ parent() }}
+{% stylesheets
+	'../app/Resources/public/css/bootstrap.min.css'
+	'../app/Resources/public/css/bootstrap.datepicker.css'
+	'../app/Resources/public/css/main.css'	
+	'@BackendBundle/Resources/public/css/jquery.dataTables.bootstrap.css'
+	'@BackendBundle/Resources/public/css/backend.css'
+	filter='yui_css' output='css/*.css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+{% endstylesheets %}
+{% endblock %}
+{% block body %}
+	{% include 'BackendBundle::navbar.html.twig' %}
+	<div class="container" data-controller="{{ section }}" data-startup>
+		<h2>{% block pagetitle %}Reserved Area{% endblock %}</h2>
+		<ul class="breadcrumb">
+			<li><i class="icon-home"></i></li>
+			<li>
+				<a href="{{ path('mwlabs_backend_admin_index') }}">Home</a>
+			</li>
+			{% block breadcrumbs %}{% endblock %}
+		</ul>		
+		<div class="row-fluid">
+			{% block main %}{% endblock %}
+		</div>
+	<hr/>
+	{% include '::footer.html.twig' %}
+
+	</div> <!-- /container -->
+	<div class="modal fade hide" id="modal"></div>
+	{% block js %}
+		{{ parent() }}
+
+		{% javascripts
+			'../app/Resources/public/js/underscore-min.js'
+			'../app/Resources/public/js/xdate.js'
+			'../app/Resources/public/js/spin.min.js'			
+			'../app/Resources/public/js/jquery.spin.js'						
+			'../app/Resources/public/js/bootstrap.min.js'
+			'../app/Resources/public/js/bootstrap.datepicker.js'				
+			'../app/Resources/public/js/simple.min.js'
+			'../app/Resources/public/js/main.js'
+			'@BackendBundle/Resources/public/js/jquery.dataTables.min.js'
+			'@BackendBundle/Resources/public/js/jquery.dataTables.fnReloadAjax.js'			
+			'@BackendBundle/Resources/public/js/jquery.dataTables.bootstrap.js'			
+			'@BackendBundle/Resources/public/js/backend.tableAware.js'			
+			'@BackendBundle/Resources/public/js/backend.js'
+			filter='yui_js' %}
+		    <script src="{{ asset_url }}" ></script>
+		{% endjavascripts %}		
+		<script>var basePath = "{{ app.request.basePath }}";</script>		
+		
+	{% endblock %}
+{% endblock %}

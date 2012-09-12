@@ -1,0 +1,81 @@
+/*===============================
+*		Utility classes		   *
+===============================*/
+
+.hide{
+	display:none;
+}
+
+/*===============================
+*		Common section		   *
+===============================*/
+.container[data-startup] {
+  margin-top: 60px;
+}
+
+.navbar form input{
+	margin-bottom:0;
+}
+
+.navbar, .footer, .credentials{
+	font-size:13px;
+}
+
+.footer{
+	margin-bottom:20px;
+}
+
+.credentials{
+	padding: 10px 10px;
+}
+
+.credentials a strong{
+	color:white;
+}
+
+/*===============================
+*		Bootstrap hacks		   *
+===============================*/
+.modal{
+	overflow:visible!important;
+}
+
+.modal .form-horizontal{
+	margin-bottom:0;
+}
+
+.modal-body{
+	max-height:450px;
+}
+
+.modal .help-block{
+	font-size: 85%;
+}
+
+.modal .error{
+	line-height:30px;	
+	color:red;
+	font-size: 85%;
+	font-weight:bold;
+}
+
+label.control-label{
+	font-weight:bold;
+}
+
+label.control-label:after{
+	content: ":\00a0\00a0";
+}
+
+label.control-label.required:after{
+	content: ': *';
+}
+
+form .form-errors{
+	margin-top:20px;
+	color:red;
+}
+
+.form-boxed{
+	max-width:400px;
+}

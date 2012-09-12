@@ -1,0 +1,5 @@
+services:
+    Text.twig.extension:
+        class: MWLabs\FrontendBundle\Extension\TextExtension
+        tags:
+            - { name: twig.extension }

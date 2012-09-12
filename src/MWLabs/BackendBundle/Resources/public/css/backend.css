@@ -1,0 +1,60 @@
+/*===============================
+*		Common section		   *
+===============================*/
+
+.hidelet{ display:none; }
+.loader{
+	height: 633px;
+	background: transparent url('../img/ajax-loader.gif') no-repeat center center;
+}
+
+.table-wrapper{
+	min-height:573px;
+}
+
+.table-actions{
+	margin-top:20px;
+}
+
+#user_roles{
+	padding-top: 5px;
+	line-height: 20px;
+	vertical-align:middle;
+}
+
+#user_roles input[type="checkbox"]{
+	margin-top:-3px;
+	display:inline;
+}
+
+#user_roles label{
+	display:inline;
+	clear:right;
+	margin: 0 10px;	
+}
+
+.hide{
+	display:none;
+}
+
+#editor{
+    position: absolute;
+	width: 720px;
+	height:400px;
+}
+
+.form-editor-tools{
+	width: 670px;	
+}
+
+.form-editor-wrapper{
+	height:400px;
+}
+
+.capitalize{
+	text-transform:capitalize;
+}
+
+.fakelabel{
+	margin-left:160px;	
+}
