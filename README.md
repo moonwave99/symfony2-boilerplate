@@ -5,6 +5,12 @@ This is my Symfony boilerplate featuring setup for all the bundles I use more of
 ## Installation
 
 * Extract the [archive](https://github.com/moonwave99/symfony2-boilerplate/zipball/master) into desired folder [e.g. `/var/www/symfony-boilerplate/`];
+* Enter directory, then **install vendors**:
+
+With [Composer](14) installed, run:
+
+	$ php composer.phar update
+
 * Be sure Symfony requirements are met by pointing your browser to [`http://localhost/symfony-boilerplate/web/config.php`](http://localhost/symfony-boilerplate/web/config.php);
 * Hit the `Configure your Symfony Application Online` link;
 * `app/config/parameters.yml` file will be created - be sure it looks like the following, beside `secret` value being different of course:
@@ -29,11 +35,9 @@ This is my Symfony boilerplate featuring setup for all the bundles I use more of
 	    webmaster:         webmaster@somedomain.com
 	    analytics:         UA-XXXXXXX-X
 
+If everything went right, you can safely point to [`http://localhost/symfony-boilerplate/web/app_dev.php`](http://localhost/symfony-boilerplate/web/app_dev.php) to see the homepage.
+
 Now you need to perform a couple of command line tasks - go into installation folder then:
-
-**Install vendors** [via [Composer](14)]:
-
-	$ php composer.phar update
 
 **Create schema for User entity:**
 
@@ -46,10 +50,8 @@ Now you need to perform a couple of command line tasks - go into installation fo
 **Create a basic user with username `user` and password `user` [just in order to have some data to show into the admin section]:**
 
 	$ php app/console fos:user:create user user@user.com user
-	
-If everything went right, you can safely point to [`http://localhost/symfony-boilerplate/web/app_dev.php`](http://localhost/symfony-boilerplate/web/app_dev.php) to see the homepage.
 
-You may login with created credentials at [`http://localhost/symfony-boilerplate/web/app_dev.php/login`](http://localhost/symfony-boilerplate/web/app_dev.php/login), and if you are logged as `admin` you may have a peek at admin tools at [`http://localhost/symfony-boilerplate/web/app_dev.php/admin/index`](http://localhost/symfony-boilerplate/web/app_dev.php/admin/index)
+You may now login with created credentials at [`http://localhost/symfony-boilerplate/web/app_dev.php/login`](http://localhost/symfony-boilerplate/web/app_dev.php/login), and if you are logged as `admin` you may have a peek at admin tools at [`http://localhost/symfony-boilerplate/web/app_dev.php/admin/index`](http://localhost/symfony-boilerplate/web/app_dev.php/admin/index)
 
 ---
 
