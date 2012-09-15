@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Symfony2-Boilerplate repository.
+ *
+ * (c) Diego Caponera <http://moonwave99.github.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace MWLabs\BackendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -8,12 +17,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use MWLabs\UserBundle\Entity\User;
-use MWLabs\FrontendBundle\Entity\Article;
-use MWLabs\FrontendBundle\Entity\League;
 
 use MWLabs\RestBundle\Form\Type\UserType;
-use MWLabs\RestBundle\Form\Type\ArticleType;
-use MWLabs\RestBundle\Form\Type\LeagueType;
 
 
 class AdminController extends Controller
