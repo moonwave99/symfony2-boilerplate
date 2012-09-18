@@ -24,7 +24,10 @@ twig:
     strict_variables: %kernel.debug%
     globals:
         analytics:  %analytics%
-        webmaster:  %webmaster%       
+        webmaster:  %webmaster%  
+    form:
+        resources:
+            - '::Form/fields.html.twig'
 
 # Assetic Configuration
 assetic:

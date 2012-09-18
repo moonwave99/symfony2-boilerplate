@@ -31,13 +31,15 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-        $builder -> add('username');
-        $builder -> add('email', 'email');
+        $builder -> add('username', 'text', array( 'attr' => array('class '=> 'span3') ));
+        $builder -> add('email', 'email', array( 'attr' => array('class '=> 'span3') ));
 		$builder -> add('enabled', 'choice', array(
 		    'choices'  => array(
 				0 => 'No',
 				1 => 'Yes'
 			),
+			'help_block' => 'Users will not be able to login until enabled.',
+			'attr' => array('class '=> 'span1'),			
 		));
 		$builder -> add('id', 'hidden');
 

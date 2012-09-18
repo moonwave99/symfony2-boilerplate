@@ -5,31 +5,7 @@
 </div>
 
 <div class="modal-body">
-	<fieldset>
-	<div class="control-group">
-		{{ form_label( form.username, 'Username', { 'label_attr' : {'class' : 'control-label'} }) }}
-		<div class="controls">
-			{{ form_widget( form.username, { 'attr' : { 'class' : 'span4' }} )}}
-			<div class="error"></div>
-		</div>
-	</div>
-	<div class="control-group">
-		{{ form_label( form.email, 'E-Mail', { 'label_attr' : {'class' : 'control-label'} }) }}
-		<div class="controls">
-			{{ form_widget( form.email, { 'attr' : { 'class' : 'span4' }} )}}
-			<div class="error"></div>			
-		</div>
-	</div>
-	<div class="control-group">
-		{{ form_label( form.enabled, 'Enabled', { 'label_attr' : {'class' : 'control-label'} }) }}
-		<div class="controls">
-			{{ form_widget( form.enabled, { 'attr' : { 'class' : 'span4' }} )}}
-			<div class="error"></div>
-			<p class="help-block"><i class="icon-exclamation-sign"></i> Users will not be able to login until enabled.</p>
-		</div>
-	</div>	
-	{{ form_rest(form) }}
-	</fieldset>
+	{{ form_widget(form) }}
 	<p><small>* = required field.</small></p>
 	<div class="alert alert-danger hide"><i class="icon-warning-sign"></i> <span class="message"></span></div>
 </div>

@@ -1,0 +1,7 @@
+{% extends 'MopaBootstrapBundle:Form:fields.html.twig' %}
+
+{% block label_asterisk %}
+{% if render_required_asterisk %}
+    {% if not required %}{% endif %}
+{% endif %}
+{% endblock label_asterisk %}

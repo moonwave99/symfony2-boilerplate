@@ -22,7 +22,7 @@
 			
 			this._messages = {
 				
-				500 : "We had a problem, please contact webmaster."
+				500 : "Si è verificato un problema, riprova oppure contatta il webmaster."
 				
 			};
 	
@@ -54,9 +54,9 @@
 				'sDom': "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
 				'sPaginationType': 'bootstrap',
 				'oLanguage': {
-					sInfo: 'Showing: _START_-_END_ of _TOTAL_.',
-					sLengthMenu : 'Show _MENU_ elements per page.',
-					sSearch : 'Filter results: '
+					sInfo: 'Elementi: _START_-_END_ su _TOTAL_.',
+					sLengthMenu : 'Visualizza _MENU_ elementi per pagina.',
+					sSearch : 'Filtra elementi: '
 				},
 				'bProcessing' : true,
 				'sAjaxSource' : $(this._table).attr('data-source'),
@@ -87,11 +87,11 @@
 			 * Private functions
 			 *===========================================*/
 			this._injectErrors = function(form, errors){
-				
-				$('.error', form).html('');
-				
-				for(key in errors){ $('[name$="[' + key + ']"]', form).parent().find('.error').html(errors[key]) }
-				
+
+				$('.error', form).remove();
+
+				for(key in errors){ $('[name$="[' + key + ']"]', form).after($('<div></div>').html( errors[key] ).addClass('error')) }
+
 			}
 			
 			this._restCall = function(form, type, callback){
@@ -119,7 +119,7 @@
 							$('.error', form).html('');
 							$button.button('complete').addClass('btn-success').attr('disabled', true);							
 							$form.find('.alert-danger').hide();	
-							self._table.dataTable().fnReloadAjax();										
+							self._table.length > 0 && self._table.dataTable().fnReloadAjax();										
 
 						},						
 
@@ -128,7 +128,7 @@
 							$('.error', form).html('');
 							$button.button('complete').addClass('btn-success').attr('disabled', true);							
 							$form.find('.alert-danger').hide();	
-							self._table.dataTable().fnReloadAjax();										
+							self._table.length > 0 && self._table.dataTable().fnReloadAjax();								
 
 						},
 						
@@ -137,7 +137,7 @@
 							$('.error', form).html('');
 							$button.button('complete').addClass('btn-success').attr('disabled', true);							
 							$form.find('.alert-danger').hide();	
-							self._table.dataTable().fnReloadAjax();										
+							self._table.length > 0 && self._table.dataTable().fnReloadAjax();							
 
 						},						
 
@@ -145,7 +145,7 @@
 
 							var data = $.parseJSON(jqXHR.responseText);
 							self._injectErrors(form, data.errors);
-							$button.button('complete').addClass('btn-danger').val('Please retry!');						
+							$button.button('complete').addClass('btn-danger').val('Ooops! Riprova');						
 							if(data.message)
 								$form.find('.alert-danger .message').html(data.message).parent().show();
 
@@ -154,14 +154,14 @@
 						403 : function(jqXHR, textStatus, errorThrown){
 
 							var data = $.parseJSON(jqXHR.responseText);
-							$button.button('complete').addClass('btn-danger').val('Please retry!');
+							$button.button('complete').addClass('btn-danger').val('Ooops! Riprova');
 							$form.find('.alert-danger .message').html(data.message).parent().show();
 
 						},						
 
 						500 : function(jqXHR, textStatus, errorThrown){
 
-							$button.button('complete').addClass('btn-danger').val('Please retry!');
+							$button.button('complete').addClass('btn-danger').val('Ooops! Riprova');
 							$form.find('.alert-danger .message').html(self._messages[500]).parent().show();
 
 						}
@@ -203,7 +203,7 @@
 					
 					for(var i = 0; i < entry[key].length; i++){
 						
-						$('input[name="' + this._entity + '['+ key +']['+ entry[key][i] +']"]', $div).attr('checked', true);
+						$('input[value="' + entry[key][i] +'"]', $div).prop('checked', true);
 						
 					}
 					
