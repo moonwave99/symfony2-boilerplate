@@ -15,7 +15,7 @@ With [Composer](14) installed, run:
 * Hit the `Configure your Symfony Application Online` link;
 * `app/config/parameters.yml` file will be created - be sure it looks like the following, beside `secret` value being different of course:
 
-[notice the two latest line - `webmaster` and `analytics`]
+[You'll have to add the two latest line - `webmaster` and `analytics` - with your details]
 
 	parameters:
 	    database_driver:   pdo_mysql
@@ -88,10 +88,12 @@ I usually prepare 4 main bundles:
 
 * [**jms/metadata**](8) - Class/method/property metadata management;
 * [**KnpLabs/KnpPaginatorBundle**](11) - SEO friendly paginator to sort and paginate;
-* [**KnpLabs/ npMarkdownBundle**](12) - Symfony2 wrapper for PHP markdown;
+* [**KnpLabs/KnpMarkdownBundle**](12) - Symfony2 wrapper for PHP markdown;
 * [**jms/serializer-bundle**](13) - Easily serialize, and deserialize object graphs of any complexity (supports XML, JSON, YAML);
-* [**FriendsOfSymfony/FOSUserBundle**](9) - User management.
-* [**FriendsOfSymfony/FOSRestBundle**](10) - Facilities for mantaining RESTful webservices.
+* [**FriendsOfSymfony/FOSUserBundle**](9) - User management;
+* [**FriendsOfSymfony/FOSRestBundle**](10) - Facilities for mantaining RESTful webservices;
+* [**FriendsOfSymfony/FOSJsRoutingBundle**](11) - A pretty nice way to expose your Symfony2 routing to client applications;
+* [**phiamo/MopaBootstrapBundle**](16) - A collection of code to integrate Twitter's Bootstrap as easy as possible into your project.
 
 [1]:  http://symfony.com/doc/current/cookbook/assetic/asset_management.html  
 [2]:  http://twitter.github.com/bootstrap/
@@ -107,3 +109,5 @@ I usually prepare 4 main bundles:
 [12]: https://github.com/KnpLabs/KnpMarkdownBundle
 [13]: https://github.com/schmittjoh/JMSSerializerBundle
 [14]: http://getcomposer.org/
+[15]: https://github.com/FriendsOfSymfony/FOSJsRoutingBundle
+[16]: https://github.com/phiamo/MopaBootstrapBundle

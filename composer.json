@@ -24,7 +24,9 @@
 		"jms/serializer-bundle" : "*",
 		"friendsofsymfony/user-bundle": "*",
 		"friendsofsymfony/rest" : "*",
-		"friendsofsymfony/rest-bundle" : "dev-master"
+		"friendsofsymfony/rest-bundle" : "dev-master",
+		"friendsofsymfony/jsrouting-bundle" : "dev-master",
+		"mopa/bootstrap-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

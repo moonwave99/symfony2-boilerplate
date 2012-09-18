@@ -24,6 +24,8 @@ class AppKernel extends Kernel
 			new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),			
 			new FOS\UserBundle\FOSUserBundle(),
 			new FOS\RestBundle\FOSRestBundle(),
+			new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+			new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),			
 			new MWLabs\RestBundle\RestBundle(),					
 			new MWLabs\UserBundle\UserBundle(),			
 			new MWLabs\FrontendBundle\FrontendBundle(),

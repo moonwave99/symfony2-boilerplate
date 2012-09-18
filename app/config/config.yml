@@ -24,7 +24,7 @@ twig:
     strict_variables: %kernel.debug%
     globals:
         analytics:  %analytics%
-        webmaster:  %webmaster%    
+        webmaster:  %webmaster%       
 
 # Assetic Configuration
 assetic:
@@ -87,3 +87,9 @@ sensio_framework_extra:
 fos_rest:
     routing_loader:
         default_format: json
+        
+mopa_bootstrap:
+    form:
+        render_fieldset: true
+        show_legend: false
+        error_type: 'block' 
