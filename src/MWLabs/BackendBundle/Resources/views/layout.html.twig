@@ -38,6 +38,9 @@
 	{% block js %}
 		{{ parent() }}
 
+		<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+		<script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+
 		{% javascripts
 			'../app/Resources/public/js/underscore-min.js'
 			'../app/Resources/public/js/xdate.js'

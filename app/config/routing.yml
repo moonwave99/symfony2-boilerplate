@@ -34,4 +34,11 @@ fos_user_change_password:
 
 #rest
 rest:
-   resource: "@RestBundle/Resources/config/routing.yml"
+    type: rest    
+    resource: "@RestBundle/Resources/config/routing.yml"
+    options:
+        expose: true    
+    
+#fos_js_routing
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
