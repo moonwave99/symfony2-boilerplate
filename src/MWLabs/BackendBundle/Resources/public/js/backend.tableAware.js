@@ -22,7 +22,7 @@
 			
 			this._messages = {
 				
-				500 : "Si è verificato un problema, riprova oppure contatta il webmaster."
+				500 : "We had a problem, please contact webmaster."
 				
 			};
 	
@@ -54,9 +54,9 @@
 				'sDom': "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
 				'sPaginationType': 'bootstrap',
 				'oLanguage': {
-					sInfo: 'Elementi: _START_-_END_ su _TOTAL_.',
-					sLengthMenu : 'Visualizza _MENU_ elementi per pagina.',
-					sSearch : 'Filtra elementi: '
+					sInfo: 'Showing: _START_-_END_ of _TOTAL_.',
+					sLengthMenu : 'Show _MENU_ elements per page.',
+					sSearch : 'Filter results: '
 				},
 				'bProcessing' : true,
 				'sAjaxSource' : $(this._table).attr('data-source'),
@@ -94,6 +94,22 @@
 
 			}
 			
+			this._getRoute = function($form, type){
+				
+				var params = {}, routeParams = $form.data('route-params'), route = type.toLowerCase() + '_';
+				
+				for(var i = 0; i < routeParams.length; i++){
+					
+					params[ routeParams[i] ] = $("input[name='" + this._entity + "[" + routeParams[i] + "]']", $form).val();
+					
+					route += ( i != routeParams.length -1 ) ? routeParams[i] + 's_' : this._entity + 's';
+					
+				}
+				
+				return Routing.generate( route, params );
+				
+			};
+			
 			this._restCall = function(form, type, callback){
 			
 				var self = this;
@@ -105,10 +121,14 @@
 				else
 					$button.button('loading');
 
-				var url = $form.attr('action') + ( (type == 'PUT' || type == 'DELETE') ? '/' + $("input[name='" + this._entity + "[id]']", $form).val() : '' );
+				//var url = Routing.generate( type.toLowerCase() + '_' + this._entity + 's', { id : $("input[name='" + this._entity + "[id]']", $form).val() } );
+				
+				//console.log(url);
+
+				//var url = $form.attr('action') + ( (type == 'PUT' || type == 'DELETE') ? '/' + $("input[name='" + this._entity + "[id]']", $form).val() : '' );
 
 				$.ajax({
-					url : url,
+					url : this._getRoute($form, type),
 					type : type,
 					data : $form.serialize(),
 					dataType : 'json',

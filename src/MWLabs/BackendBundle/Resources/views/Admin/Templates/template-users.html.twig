@@ -1,5 +1,5 @@
 <script type="text/template" id="template-user-form-new">
-<form class="form-horizontal homepage-form" action="{{ path('post_users') }}" method="post" data-controller="users" data-action="<%=action%>">
+<form class="form-horizontal homepage-form" action="#" method="post" data-controller="users" data-action="<%=action%>" data-route-params='["id"]'>
 <div class="modal-header">
 	<h4><% print(action == 'post' ? 'Create New' : 'Edit' )%> User</h4>
 </div>
@@ -18,7 +18,7 @@
 </script>
 
 <script type="text/template" id="template-user-form-remove">
-<form class="form-horizontal homepage-form" action="{{ path('post_users') }}" method="post" data-controller="users" data-action="remove">
+<form class="form-horizontal homepage-form" action="#" method="post" data-controller="users" data-action="remove" data-route-params='["id"]'>
 <div class="modal-header">
 	<h4>Remove User</h4>
 </div>

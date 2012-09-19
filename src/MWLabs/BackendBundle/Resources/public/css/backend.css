@@ -12,12 +12,16 @@
 	min-height:573px;
 }
 
+#table_length label{
+	line-height:30px;
+}
+
 .table-actions{
 	margin-top:20px;
 }
 
 .hide{
-	display:none;
+	display: none;
 }
 
 #editor{
@@ -35,7 +39,7 @@
 }
 
 .capitalize{
-	text-transform:capitalize;
+	text-transform: capitalize;
 }
 
 .fakelabel{
