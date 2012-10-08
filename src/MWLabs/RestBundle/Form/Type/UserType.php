@@ -41,7 +41,7 @@ class UserType extends AbstractType
 			'help_block' => 'Users will not be able to login until enabled.',
 			'attr' => array('class '=> 'span1'),			
 		));
-		$builder -> add('id', 'hidden');
+		$builder -> add('id', 'hidden', array('property_path' => false));		
 
     }
 
